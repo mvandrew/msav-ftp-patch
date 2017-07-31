@@ -17,3 +17,36 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+// ------------------------------------------
+// Define Plugin Text Domain
+// ------------------------------------------
+define( 'MSAV_FTP_PATCH__TEXT_DOMAIN',              'msav-ftp-patch' );
+
+
+// ------------------------------------------
+// Determining the plugin version.
+// ------------------------------------------
+$plugin_data = get_plugin_data( __FILE__ );
+define( 'MSAV_FTP_PATCH__VERSION',                  $plugin_data['Version']);
+
+
+// ------------------------------------------
+// Plugin Paths
+// ------------------------------------------
+define( 'MSAV_FTP_PATCH__PLUGIN_DIR',               dirname( __FILE__ ) );
+define( 'MSAV_FTP_PATCH__INCLUDES_DIR',             MSAV_FTP_PATCH__PLUGIN_DIR . '/includes' );
+define( 'MSAV_FTP_PATCH__LANGUAGES_DIR',            MSAV_FTP_PATCH__PLUGIN_DIR . '/languages' );
+define( 'MSAV_FTP_PATCH__CLASSES_DIR',              MSAV_FTP_PATCH__INCLUDES_DIR . '/classes' );
+
+
+// ------------------------------------------
+// Include helper classes
+// ------------------------------------------
+require_once ( MSAV_FTP_PATCH__CLASSES_DIR . '/class-msav-ftp-patch.php' );
+
+
+// ------------------------------------------
+// Include hooks file
+// ------------------------------------------
+require_once ( MSAV_FTP_PATCH__INCLUDES_DIR . '/plugin-hooks.php' );

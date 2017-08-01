@@ -37,7 +37,7 @@ if ( !class_exists('MsavFTP_Patch') ) {
 
 			$this->textdomain = MSAV_FTP_PATCH__TEXT_DOMAIN;
 
-			if ( !defined('FS_CHMOD_DIR') ) {
+			if ( !defined('FS_CHMOD_DIR') && is_admin() ) {
 				define( 'FS_CHMOD_DIR', 0751 );
 			}
 

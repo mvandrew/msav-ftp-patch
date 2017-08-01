@@ -11,5 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * General
  */
-add_action( 'filesystem_method', array(MsavFTP_Patch::get_instance(), 'provide_direct_access') );
+if ( is_admin() ) {
+	add_action( 'filesystem_method', array( MsavFTP_Patch::get_instance(), 'provide_direct_access' ) );
+}
 add_action( 'plugins_loaded', array(MsavFTP_Patch::get_instance(), 'load_plugin_textdomain') );

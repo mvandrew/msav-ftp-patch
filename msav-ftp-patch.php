@@ -27,6 +27,7 @@ define( 'MSAV_FTP_PATCH__TEXT_DOMAIN',              'msav-ftp-patch' );
 // ------------------------------------------
 // Determining the plugin version.
 // ------------------------------------------
+require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 $plugin_data = get_plugin_data( __FILE__ );
 define( 'MSAV_FTP_PATCH__VERSION',                  $plugin_data['Version']);
 
